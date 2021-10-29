@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText noteEditText;
     private Button addButton;
-//    private Button clearButton;
+    private Button clearButton;
     private TextView notesTextView;
 
     private SharedPreferences notesPref;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         noteEditText = findViewById(R.id.editTextNote);
         addButton = findViewById(R.id.buttonAdd);
-//        clearButton = findViewById(R.id.buttonClear);
+        clearButton = findViewById(R.id.buttonClear);
         notesTextView = findViewById(R.id.textViewNotes);
     }
 
@@ -62,15 +62,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-//        clearButton.setOnClickListener(view -> {
-//
-//            notesTextView.setText("");
-//
-//            notesPref.edit()
-//                    .putString("NOTES", "")
-//                    .apply();
-//
-//        });
+        clearButton.setOnClickListener(view -> {
+
+            notesTextView.setText("");
+
+            notesPref.edit()
+                    .putString("NOTES", "")
+                    .apply();
+
+        });
     }
 
 }
